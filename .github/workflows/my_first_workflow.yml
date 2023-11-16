@@ -12,3 +12,6 @@ jobs:
         run: |
           echo "Project name: $GITHUB_REPOSITORY"
           echo "Current branch: $GITHUB_REF"
+          
+
+  
