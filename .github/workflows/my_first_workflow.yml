@@ -1,0 +1,10 @@
+name: My first workflow
+
+on: workflow_dispatch
+
+jobs:
+  print-project-name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Project name ${{github_repository}}"
+      - run: echo "Project branch ${{github_ref}}"
