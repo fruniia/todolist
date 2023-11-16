@@ -3,8 +3,12 @@ name: My first workflow
 on: workflow_dispatch
 
 jobs:
-  print-project-name:
+  printinfo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Project name ${{github_repository}}"
-      - run: echo "Project branch ${{github_ref}}"
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print project info
+        run: |
+          echo "Project name: $GITHUB_REPOSITORY"
+          echo "Current branch: $GITHUB_REF"
