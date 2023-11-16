@@ -1,0 +1,16 @@
+name: Build
+
+on: workflow_dispatch
+
+jobs:
+  buildproject:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3.2.0
+      with:
+        dotnet-version: 7.0.x
+    - name: .Net Build
+      run: build ./TodoListApp.Tests/TodoListApp.Tests.csproj --no-restore
